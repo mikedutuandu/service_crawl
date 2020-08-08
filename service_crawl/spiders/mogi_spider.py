@@ -4,10 +4,14 @@ import scrapy
 class MogiSpider(scrapy.Spider):
     def __init__(self):
         super().__init__()
-        for i in range(1, 3):
+        for i in range(1, 10460):
             url = 'https://mogi.vn/mua-nha-dat?cp=' + str(i)
             self.start_urls.append(url)
 
+        for i in range(1, 15050):
+            url = 'https://mogi.vn/thue-nha-dat?cp=' + str(i)
+            self.start_urls.append(url)
+            
     name = 'mogi'
 
     def parse(self, response):
